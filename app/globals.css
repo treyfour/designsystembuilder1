@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Cosmos Color System - Warm Neutrals */
+  --background: #F5F4F2;
+  --foreground: #0D0D0D;
+  --surface: #E8E7E5;
+  --border: #E8E7E5;
+  --text-secondary: #727170;
+  --text-tertiary: #959392;
+  --button-primary: #0D0D0D;
+  --button-hover: #292929;
+  --card-bg: #FFFFFF;
+
+  /* Spacing */
+  --header-height: 82px;
+  --page-padding: 16px;
+
+  @media (min-width: 500px) {
+    --page-padding: 30px;
+  }
+  @media (min-width: 834px) {
+    --page-padding: 40px;
+  }
+  @media (min-width: 1280px) {
+    --page-padding: 60px;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-surface: var(--surface);
+  --color-border-custom: var(--border);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-button-primary: var(--button-primary);
+  --color-button-hover: var(--button-hover);
+  --color-card-bg: var(--card-bg);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+  --font-mono: 'SF Mono', 'Consolas', 'Monaco', ui-monospace, monospace;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
 }

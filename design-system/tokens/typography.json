@@ -1,0 +1,152 @@
+{
+  "$schema": "https://design-tokens.org/schema.json",
+  "description": "Typography tokens for the design system",
+  "lastUpdated": "2026-02-16",
+  
+  "fontFamily": {
+    "display": {
+      "value": "'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display'",
+      "fallback": "system-ui, sans-serif",
+      "description": "Headlines, hero text, display typography"
+    },
+    "body": {
+      "value": "'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display'",
+      "fallback": "system-ui, sans-serif",
+      "description": "Body copy, UI text, general content"
+    },
+    "mono": {
+      "value": "'SF Mono', 'Consolas', 'Monaco'",
+      "fallback": "ui-monospace, monospace",
+      "description": "Code, technical content, tabular data"
+    }
+  },
+  
+  "fontSize": {
+    "xs":   { "value": "0.75rem",  "px": "12px", "description": "Captions, fine print" },
+    "sm":   { "value": "0.875rem", "px": "14px", "description": "Secondary text, labels" },
+    "base": { "value": "1rem",     "px": "16px", "description": "Body copy default" },
+    "lg":   { "value": "1.125rem", "px": "18px", "description": "Lead paragraphs" },
+    "xl":   { "value": "1.25rem",  "px": "20px", "description": "Small headings" },
+    "2xl":  { "value": "1.5rem",   "px": "24px", "description": "Section headings" },
+    "3xl":  { "value": "1.875rem", "px": "30px", "description": "Page titles" },
+    "4xl":  { "value": "2.25rem",  "px": "36px", "description": "Hero headings" },
+    "5xl":  { "value": "3rem",     "px": "48px", "description": "Display text" },
+    "6xl":  { "value": "3.75rem",  "px": "60px", "description": "Large display" }
+  },
+  
+  "fontWeight": {
+    "normal":   { "value": "400", "description": "Body text" },
+    "medium":   { "value": "500", "description": "Slight emphasis" },
+    "semibold": { "value": "600", "description": "Subheadings, emphasis" },
+    "bold":     { "value": "700", "description": "Headlines, strong emphasis" }
+  },
+  
+  "lineHeight": {
+    "none":    { "value": "1",    "description": "Display text, single line" },
+    "tight":   { "value": "1.25", "description": "Headings" },
+    "snug":    { "value": "1.375", "description": "Subheadings" },
+    "normal":  { "value": "1.5",  "description": "Body copy" },
+    "relaxed": { "value": "1.625", "description": "Long-form content" },
+    "loose":   { "value": "2",    "description": "Spacious text" }
+  },
+  
+  "letterSpacing": {
+    "tighter": { "value": "-0.05em", "description": "Large display text" },
+    "tight":   { "value": "-0.025em", "description": "Headlines" },
+    "normal":  { "value": "0",       "description": "Body copy" },
+    "wide":    { "value": "0.025em", "description": "All caps, labels" },
+    "wider":   { "value": "0.05em",  "description": "Spaced caps" },
+    "widest":  { "value": "0.1em",   "description": "Maximum spacing" }
+  },
+  
+  "textStyles": {
+    "displayLarge": {
+      "fontFamily": "display",
+      "fontSize": "5xl",
+      "fontWeight": "bold",
+      "lineHeight": "none",
+      "letterSpacing": "tighter",
+      "description": "Hero headlines"
+    },
+    "displayMedium": {
+      "fontFamily": "display",
+      "fontSize": "4xl",
+      "fontWeight": "bold",
+      "lineHeight": "tight",
+      "letterSpacing": "tight",
+      "description": "Page titles"
+    },
+    "heading1": {
+      "fontFamily": "display",
+      "fontSize": "3xl",
+      "fontWeight": "semibold",
+      "lineHeight": "tight",
+      "letterSpacing": "tight",
+      "description": "Section headings"
+    },
+    "heading2": {
+      "fontFamily": "display",
+      "fontSize": "2xl",
+      "fontWeight": "semibold",
+      "lineHeight": "snug",
+      "letterSpacing": "normal",
+      "description": "Subsection headings"
+    },
+    "heading3": {
+      "fontFamily": "body",
+      "fontSize": "xl",
+      "fontWeight": "semibold",
+      "lineHeight": "snug",
+      "letterSpacing": "normal",
+      "description": "Card titles, small headings"
+    },
+    "bodyLarge": {
+      "fontFamily": "body",
+      "fontSize": "lg",
+      "fontWeight": "normal",
+      "lineHeight": "relaxed",
+      "letterSpacing": "normal",
+      "description": "Lead paragraphs"
+    },
+    "bodyDefault": {
+      "fontFamily": "body",
+      "fontSize": "base",
+      "fontWeight": "normal",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "description": "Standard body copy"
+    },
+    "bodySmall": {
+      "fontFamily": "body",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "description": "Secondary content"
+    },
+    "caption": {
+      "fontFamily": "body",
+      "fontSize": "xs",
+      "fontWeight": "normal",
+      "lineHeight": "normal",
+      "letterSpacing": "wide",
+      "description": "Captions, metadata"
+    },
+    "label": {
+      "fontFamily": "body",
+      "fontSize": "sm",
+      "fontWeight": "medium",
+      "lineHeight": "none",
+      "letterSpacing": "wide",
+      "description": "Form labels, UI labels"
+    },
+    "code": {
+      "fontFamily": "mono",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "lineHeight": "relaxed",
+      "letterSpacing": "normal",
+      "description": "Code blocks, technical"
+    }
+  }
+}
