@@ -111,7 +111,7 @@ export default function AmazonCosmos() {
       <header className="sticky top-0 z-50 bg-background border-b border-border-custom">
         <div className="h-[82px] flex items-center gap-6 px-[var(--page-padding)]">
           <button className="shrink-0 text-lg font-light tracking-tight">
-            cosmos<span className="text-text-tertiary">mart</span>
+            niagra
           </button>
 
           <div className="flex-1 max-w-2xl relative">
@@ -368,7 +368,7 @@ export default function AmazonCosmos() {
         </div>
         <div className="flex items-center justify-between pt-8 border-t border-border-custom">
           <span className="text-lg font-light tracking-tight">
-            cosmos<span className="text-text-tertiary">mart</span>
+            niagra
           </span>
           <span className="text-xs text-text-tertiary">&copy; 2026</span>
         </div>

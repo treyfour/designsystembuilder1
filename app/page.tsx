@@ -1,6 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+
+const img = (id: string) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=800&h=600&q=80`;
 
 const projects = [
   {
@@ -8,67 +12,76 @@ const projects = [
     title: "AI agents",
     description: "AI agents empower new competencies for employers",
     category: "SaaS · AI · Enterprise",
-    color: "#D4D0CC",
+    color: "#1a1a2e",
+    image: img("1541701494587-cb58502866ab"),
   },
   {
     number: "002",
     title: "Pinzout checkout",
     description: "A modular checkout experience similar to Apple Pay",
     category: "Fintech · Mobile",
-    color: "#C8C4BF",
+    color: "#0f1923",
+    image: img("1564424555153-04228f0aa7ee"),
   },
   {
     number: "003",
     title: "Unlocking enterprise",
     description: "Enterprise tooling that shines for enterprise customers",
     category: "SaaS · Reporting",
-    color: "#BEB9B4",
+    color: "#111827",
+    image: img("1460925895917-afdab827c52f"),
   },
   {
     number: "004",
     title: "Reducing spend by 40%",
     description: "Reducing card spending and mitigating card fraud",
     category: "Fintech · Security",
-    color: "#D1CEC9",
+    color: "#0d1117",
+    image: img("1563013544-824ae1b704d3"),
   },
   {
     number: "005",
     title: "Solace",
     description: "An event stream management productivity platform",
     category: "SaaS · Enterprise",
-    color: "#C5C1BC",
+    color: "#161b22",
+    image: img("1498050108023-c5249f4df085"),
   },
   {
     number: "006",
     title: "Increasing transfers",
     description: "Reducing friction in transferring earned wages",
     category: "Fintech · Mobile",
-    color: "#CBC7C2",
+    color: "#0f172a",
+    image: img("1488509082528-cefbba5ad692"),
   },
   {
     number: "007",
     title: "Admin compare and sync",
     description: "Streamlined admin tools for data synchronization",
     category: "SaaS · Operations",
-    color: "#D7D3CE",
+    color: "#1e1b4b",
+    image: img("1551288049-bebda4e38f71"),
   },
   {
     number: "008",
     title: "MSO camera sky social",
     description: "Connecting creators to fans and brands in new ways",
     category: "Social · Mobile",
-    color: "#C2BEBA",
+    color: "#0c0a09",
+    image: img("1423784346385-c1d4dac9893a"),
   },
   {
     number: "009",
     title: "Qualcomm",
     description: "Enterprise device management solution",
     category: "Enterprise · IoT",
-    color: "#CCC8C3",
+    color: "#1c1917",
+    image: img("1518770660439-4636190af475"),
   },
 ];
 
-const categories = ["All", "SaaS", "Fintech", "Enterprise", "Mobile", "Social"];
+const categories = ["All", "SaaS", "Fintech", "Security", "Mobile", "Social"];
 
 type View = "home" | "about" | "contact";
 
@@ -123,24 +136,45 @@ export default function Home() {
           href="mailto:hello@trevorschulte.com"
           className="text-[13px] font-medium bg-button-primary text-background rounded-full px-[18px] py-[10px] hover:bg-button-hover transition-colors duration-75"
         >
-          Get in touch
+          Email me
         </a>
       </header>
 
       {view === "home" && (
         <main className="px-[var(--page-padding)] pb-16">
           {/* Hero */}
-          <section className="pt-12 pb-16 md:pt-20 md:pb-24 max-w-3xl">
-            <h1 className="text-[clamp(36px,5vw,60px)] font-light leading-[1.1] tracking-tight mb-5 animate-fade-in-up">
-              Product designer
-              <br />
-              based in SF.
-            </h1>
-            <p className="text-lg text-text-secondary font-normal leading-relaxed animate-fade-in-up" style={{ animationDelay: "100ms" }}>
-              I simplify complex problems into thoughtful
-              <br className="hidden sm:block" />
-              experiences people love.
-            </p>
+          <section className="pt-8 pb-12 md:pt-14 md:pb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
+            <div>
+              <h1 className="text-[clamp(36px,5vw,60px)] font-light leading-[1.1] tracking-tight mb-5 animate-fade-in-up">
+                Product designer
+                <br />
+                based in SF.
+              </h1>
+              <p className="text-lg text-text-secondary font-normal leading-relaxed animate-fade-in-up" style={{ animationDelay: "100ms" }}>
+                I simplify complex problems into thoughtful
+                <br className="hidden sm:block" />
+                experiences people love. 🖤
+              </p>
+            </div>
+            <div className="hidden md:flex flex-col items-end justify-end gap-8 animate-fade-in-up" style={{ animationDelay: "150ms" }}>
+              <span className="text-[12px] font-medium bg-surface text-text-secondary rounded-full px-3 py-1.5">
+                Available for work
+              </span>
+              <div className="flex gap-10">
+                <div className="text-right">
+                  <p className="text-[32px] font-light leading-none tracking-tight mb-1">8+</p>
+                  <p className="text-[11px] text-text-tertiary uppercase tracking-widest">Years</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-[32px] font-light leading-none tracking-tight mb-1">20+</p>
+                  <p className="text-[11px] text-text-tertiary uppercase tracking-widest">Projects</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-[32px] font-light leading-none tracking-tight mb-1">12+</p>
+                  <p className="text-[11px] text-text-tertiary uppercase tracking-widest">Brands</p>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* Category Filter */}
@@ -161,7 +195,7 @@ export default function Home() {
           </div>
 
           {/* Project Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-[30px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-[30px]">
             {filtered.map((project, index) => (
               <button
                 key={project.number}
@@ -169,15 +203,23 @@ export default function Home() {
                 style={{ animationDelay: `${index * 60}ms` }}
               >
                 <div
-                  className="aspect-[4/3] rounded-[22px] sm:rounded-[27px] mb-4 flex items-end p-5 relative overflow-hidden transition-transform duration-300 group-hover:scale-[0.98]"
+                  className="aspect-[4/3] rounded-[22px] sm:rounded-[27px] mb-4 relative overflow-hidden transition-transform duration-300 group-hover:scale-[0.98]"
                   style={{ backgroundColor: project.color }}
                 >
-                  <span className="text-[80px] font-light leading-none text-white/20 absolute bottom-4 right-5">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/30" />
+                  <span className="text-[80px] font-light leading-none text-white/20 absolute bottom-4 right-5 z-10">
                     {project.number}
                   </span>
                 </div>
                 <div className="flex items-baseline gap-3 mb-1">
-                  <span className="text-xs text-text-tertiary">{project.number}</span>
+                  <span className="text-[10px] font-medium tracking-widest uppercase text-text-tertiary/60">{project.number}</span>
                   <h3 className="text-[15px] font-medium group-hover:text-text-secondary transition-colors duration-75">
                     {project.title}
                   </h3>
@@ -185,7 +227,11 @@ export default function Home() {
                 <p className="text-[13px] text-text-tertiary leading-snug">
                   {project.description}
                 </p>
-                <p className="text-xs text-text-tertiary mt-1.5">{project.category}</p>
+                <div className="flex flex-wrap gap-1.5 mt-1.5">
+                  {project.category.split(" · ").map((tag) => (
+                    <span key={tag} className="text-xs text-text-tertiary border border-text-tertiary/40 rounded-full px-2.5 py-0.5">{tag}</span>
+                  ))}
+                </div>
               </button>
             ))}
           </div>
